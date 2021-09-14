@@ -1,14 +1,15 @@
 # Python Cookbook
 
 This repository contains the solutions' implementations in the book [Python Cookbook](https://www.oreilly.com/library/view/python-cookbook-3rd/9781449357337/).
+A great book! Worth it.
 
-Each notebook implements one of the 15 chapters.
+Each notebook implements one of the 15 chapters. Each folder contains the code (quick link in the table below) and a README with a summary for quick lookup.
 
 While the book contains the solutions, I believe the best way to learn is to try it yourself before looking at the answer and type the code yourself, not only reading it. 
 
-Why am I doing this? I want to master one particular programming language, and given that I am more inclined towards data science, I selected Pyhton.
+Why am I doing this? I want to master one particular programming language, and given that I am more inclined towards data science, I selected Python.
 
-I hope you enjoy the repo as much as I enjoy building it!
+I hope you enjoy the repo as much as I enjoyed building it!
 
 
 | Chapter | Notebook |
