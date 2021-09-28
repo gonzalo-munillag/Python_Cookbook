@@ -5,9 +5,7 @@
 Iterables: lists, dictionaries, sets, tuples, strings, files.
 
 An iterable is an object that you can get an iterator from. An iterable is an object that has an __iter__ method which returns an iterator, or which defines a __getitem__ method that can take sequential indexes starting from zero (and raises an IndexError when the indexes are no longer valid). 
-An iterator is an object with a next (Python 2) or __next__ (Python 3) method. 
-
-[REF](https://stackoverflow.com/questions/9884132/what-exactly-are-iterator-iterable-and-iteration)
+An iterator is an object with a next (Python 2) or __next__ (Python 3) method. ([REF])(https://stackoverflow.com/questions/9884132/what-exactly-are-iterator-iterable-and-iteration)
 
 Every generator is an iterator, but not vice versa. A generator is built by calling a function that has one or more yield expressions.
 
@@ -25,9 +23,7 @@ Iterators are used mostly to iterate or convert other objects to an iterator usi
 
 Iterator uses iter() and next() functions vs.	Generator uses yield keyword
 
-Every iterator is not a generator vs.	Every generator is an iterator
-
-[REF](https://www.geeksforgeeks.org/difference-between-iterator-vs-generator/)
+Every iterator is not a generator vs. Every generator is an iterator ([REF])(https://www.geeksforgeeks.org/difference-between-iterator-vs-generator/)
 
 Iterables:
 
@@ -53,7 +49,7 @@ Dictionary 	Collections indexed by keys
     Lookup by key will be fast
     Simple data structures behave like temporary in-memory databases
 
-[REF](https://kkiesling.github.io/python-novice-gapminder-custom/05c-iterable-data-types/)
+([REF])(https://kkiesling.github.io/python-novice-gapminder-custom/05c-iterable-data-types/)
 
 A callable object, in computer programming, is any object that can be called like a function. 
 
@@ -102,9 +98,9 @@ word, *fields, _, last = line.split(':')
 
 q = deque(maxlen=3)
 q.appendleft(4)
-q.pop()
 q.popleft()
 q.append(5)
+q.pop()
 
 ## 1.4 Finding the largest or smallest N items: heapq
 
@@ -123,7 +119,7 @@ cheap = heapq.nsmallest(3, portfolio, key=lambda s: s['price'])
 heapq.heappush(list, (-priority, index, item))
 heapq.heappop(self._queue)
 
-on can perform < operations with heaps
+one can perform < operations with heaps
 
 ## 1.6 Mapping keys to multiple values in a dictionary: defaultdict
 
@@ -253,12 +249,12 @@ rows = [
     {'fname': 'Big', 'lname': 'Jones', 'uid':1002},
 ]
 
-# sort by the desired field first. If you do nor sort, groupby will not group correctly
-# as it only clusters adjacent equal values
+// sort by the desired field first. If you do nor sort, groupby will not group correctly
+// as it only clusters adjacent equal values
 rows.sort(key=itemgetter('uid'))
-# same as: rows_by_fname = sorted(rows, key=itemgetter('uid'))
+// same as: rows_by_fname = sorted(rows, key=itemgetter('uid'))
 
-# iterate in grops
+// iterate in groups
 for uid, items in groupby(rows, key=itemgetter('uid')):
     print(uid)
     for i in items:
@@ -268,11 +264,11 @@ for uid, items in groupby(rows, key=itemgetter('uid')):
 
 // 1
 
-# The output size might be a concern, to avoid that, you can use generators
+// The output size might be a concern, to avoid that, you can use generators
 pos = (n for n in mylist if n > 0)
 pos
 
-# to print
+// to print
 for x in pos:
     print(x)
 
@@ -301,10 +297,10 @@ from itertools import compress
 
 more5 = [n>=5 for n in counts]
 print(more5)
-# remember to add list, as compress returns an iterable
+// remember to add list, as compress returns an iterable
 list(compress(addresses, more5))
 
-## 1.17 Extracting a sibset of a dictionary
+## 1.17 Extracting a subset of a dictionary
 
 // dict comprehension
 
@@ -323,10 +319,37 @@ p1 = {key:value for key, value in prices.items() if value > 200}
 tech_names = {'APPL', 'IBM', 'HPQ', 'MSFT'}
 p2 = {key:value for key, value in prices.items() if key in tech_names}
 
-## 1.18 Mapping names to sequence elements
+## 1.18 Mapping names to sequence elements: namedtuple and ._replace()
+
+// You can access data by name and not position
+Subscriber = namedtuple('Subscriber', ['addr', 'joined'])
+sub = Subscriber(addr='myhome', joined='today')
+
+// Tuples are immutable, but you can reinstantiate a new one with changes with
+
+s = s._replace(shares=75)
+
+## 1.19  Transforming and reducing data at the same time: generators
+
+// The generator transforms data iteratively and it is more memeory efficient
+
+s = sum(x*x for x in nums)
+
+portfolio = [
+    {'name':'frvw', 'shares':51},
+    {'name':'wvgwrg', 'shares':514},
+    {'name':'mtm', 'shares':75}
+]
+
+min_shares = min(s['shares'] for s in portfolio)
+
+## 1.20 Combining multiple mappings into a single maping: chainmap
+
+a = {'x':1, 'z':3}
+b = {'y':2, 'z':4}
+
+// For lookups. You first check in a and then in b if not found
+c = ChainMap(a, b)
 
 
 
-## 1.19
-
-## 1.20
