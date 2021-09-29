@@ -14,7 +14,7 @@ I hope you enjoy the repo as much as I enjoyed building it!
 
 | Chapter | Notebook |
 |:-------|:-------|
-|1|[Data structures and algorithms](https://github.com/gonzalo-munillag/Python_Cookbook/blob/main/Chapter_1.ipynb)|
+|1|[Data structures and algorithms](https://github.com/gonzalo-munillag/Python_Cookbook/tree/main/1_Data_Structures)|
 |2|[Strings and text](https://github.com/gonzalo-munillag/Python_Cookbook/blob/main/Chapter_2.ipynb)|
 |3|[Numbers, dates, and times](https://github.com/gonzalo-munillag/Python_Cookbook/blob/main/Chapter_3.ipynb)|
 |4|[Iterators and generators](https://github.com/gonzalo-munillag/Python_Cookbook/blob/main/Chapter_4.ipynb)|
