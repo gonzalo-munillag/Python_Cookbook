@@ -1,16 +1,54 @@
 # Summary
 
-## Definitions
+## Definitions and look-ups
 
-## 2.1. Splitting strings on any of multiple delimeters
+"r" before a string indicates that the string is a raw string. 
+This means that if there is "\n" in the string, printing it will print "\n" within the string.
 
-## 2.2. Matching text at the start or end of a string
+A callback function is a function which is:
 
-## 2.3. Matching strings using shell wildcard patterns
+    accessible by another function, and
+    is invoked after the first function if that first function completes [REF](https://stackoverflow.com/questions/824234/what-is-a-callback-function)
 
-## 2.4. Matching and searching for text patterns
+A nice way of imagining how a callback function works is that it is a function that is "called at the back" of the function it is passed into.
+
+## 2.1. Splitting strings on any of multiple delimeters: re.split()
+
+line = 'dwfwrg fcwoirjfw; fwigjfw, wfwg,gfwgw,     www'
+
+// not good:
+print(line.split())
+
+import re
+// \s* is for al the spaces between the delimiter and the next char
+print(re.split(r'[;,\s]\s*', line))
+
+filename = 'spam.txt'
+print(filename.endswith(('.txt'))
+print(filename.startswith('file:'))
+
+## 2.2. Matching text at the start or end of a string: .endswith() .atartswith()
+
+filename = 'spam.txt'
+print(filename.endswith(('.txt', '.md')))
+
+## 2.3. Matching strings using shell wildcard patterns: fnmatch
+
+fnmatch('foo.txt', '*.txt')
+
+For code that explicitly works with filenames, use the glob module of 5.13.
+
+## 2.4. Splitting strings on any of multiple delimeters: re.compile, .match(), .findall(), .finditer()
+
+date = '11/27/2021'
+// \d+ means match one or more digits
+pattern = re.compile(r'\d+/\d+/\d+')
+
+print('yes') if pattern.match(date) else print('no')
 
 ## 2.5. Searching and replacing text
+
+
 
 ## 2.6. Searching and replacing case-insensitive text
 
