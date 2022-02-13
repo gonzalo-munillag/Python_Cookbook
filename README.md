@@ -1,4 +1,4 @@
-# Python Cookbook
+# Python Cookbook (WIP)
 
 This repository contains the solutions' implementations in the book [Python Cookbook](https://www.oreilly.com/library/view/python-cookbook-3rd/9781449357337/).
 A great book! Worth it.
